@@ -10,7 +10,7 @@
 
 	<groupId>com.jimi</groupId>
 	<artifactId>spring-pet-clinic</artifactId>
-	<version>0.0.1</version>
+	<version>0.0.1-SNAPSHOT</version>
 	<packaging>pom</packaging>
 	<name>spring-pet-clinic</name>
 	<description>pet-clinic</description>
@@ -40,13 +40,12 @@
 					<checkModificationExcludes>
 						<checkModificationExclude>pom.xml</checkModificationExclude>
 					</checkModificationExcludes>
-
 				</configuration>
 			</plugin>
 		</plugins>
 	</build>
 	<scm>
-		<developerConnection>scm:git@https://github.com:jimmi187/spring-pet-clinic.git</developerConnection>
+		<developerConnection>scm:git@github.com:jimmi187/spring-pet-clinic.git</developerConnection>
 	  <tag>spring-pet-clinic-0.0.1</tag>
   </scm>
 

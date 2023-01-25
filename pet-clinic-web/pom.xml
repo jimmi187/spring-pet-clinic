@@ -4,7 +4,7 @@
     <parent>
         <groupId>com.jimi</groupId>
         <artifactId>spring-pet-clinic</artifactId>
-        <version>0.0.1</version>
+        <version>0.0.1-SNAPSHOT</version>
     </parent>
 
     <artifactId>pet-clinic-web</artifactId>
@@ -19,12 +19,12 @@
         <dependency>
             <groupId>com.jimi</groupId>
             <artifactId>pet-clinic-data</artifactId>
-            <version>0.0.1</version>
+            <version>0.0.1-SNAPSHOT</version>
         </dependency>
         <dependency>
             <groupId>com.jimi</groupId>
             <artifactId>pet-clinic-data</artifactId>
-            <version>0.0.1</version>
+            <version>0.0.1-SNAPSHOT</version>
             <scope>compile</scope>
         </dependency>
         <dependency>
