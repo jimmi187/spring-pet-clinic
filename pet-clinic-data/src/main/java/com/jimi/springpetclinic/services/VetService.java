@@ -1,4 +1,6 @@
 package com.jimi.springpetclinic.services;
 
-public interface VetService {
+import com.jimi.springpetclinic.model.Vet;
+
+public interface VetService extends CrudService<Vet, Long>{
 }
