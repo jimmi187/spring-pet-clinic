@@ -1,11 +1,11 @@
 package com.jimi.springpetclinic.services.map;
 
 import com.jimi.springpetclinic.model.Owner;
-import com.jimi.springpetclinic.services.CrudService;
+import com.jimi.springpetclinic.services.OwnerService;
 
 import java.util.Set;
 
-public class OwnerServiceMap extends AbstractMapService<Owner, Long> implements CrudService<Owner,Long>{
+public class OwnerServiceMap extends AbstractMapService<Owner, Long> implements OwnerService {
 
     @Override
     public Set<Owner> findAll() {
