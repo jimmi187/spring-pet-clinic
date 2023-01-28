@@ -1,13 +1,25 @@
 package com.jimi.springpetclinic.services.map;
 
 import com.jimi.springpetclinic.model.Owner;
+import com.jimi.springpetclinic.model.Pet;
+import com.jimi.springpetclinic.model.PetType;
 import com.jimi.springpetclinic.services.OwnerService;
+import com.jimi.springpetclinic.services.PetService;
+import com.jimi.springpetclinic.services.PetTypeService;
 import org.springframework.stereotype.Service;
 
 import java.util.Set;
 
 @Service
 public class OwnerServiceMap extends AbstractMapService<Owner, Long> implements OwnerService {
+
+    private final PetTypeService petTypeService;
+
+    private final PetService petService;
+    public OwnerServiceMap(PetTypeService petTypeService, PetService petService) {
+        this.petTypeService = petTypeService;
+        this.petService = petService;
+    }
 
     @Override
     public Set<Owner> findAll() {
@@ -21,7 +33,29 @@ public class OwnerServiceMap extends AbstractMapService<Owner, Long> implements 
 
     @Override
     public Owner save(Owner object) {
-        return super.save(object);
+
+        if(object != null){
+            if(object.getpets() != null){
+                object.getpets().forEach( pet ->{
+                    if(pet.getPetType() != null){
+                        if(pet.getPetType().getId() == null){
+                            pet.setPetType(petTypeService.save(pet.getPetType()));
+                        }
+                    }else{
+                        throw new RuntimeException("Pet Type is requared");
+                    }
+
+                    if(pet.getId() == null){
+                        Pet savedPet = petService.save(pet);
+                        pet.setId(savedPet.getId());
+                    }
+                });
+            }
+            return super.save(object);
+        }else{
+            return null;
+        }
+
     }
 
     @Override
