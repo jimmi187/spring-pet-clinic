@@ -1,12 +1,13 @@
 package com.jimi.springpetclinic.model;
 
+import java.util.HashSet;
 import java.util.Set;
 
 public class Owner extends Person {
     private String address;
     private String city;
     private String telephone;
-    private Set<Pet> pers;
+    private Set<Pet> pets = new HashSet<>();
 
 
     public String getAddress() {
@@ -33,11 +34,11 @@ public class Owner extends Person {
         this.telephone = telephone;
     }
 
-    public Set<Pet> getPers() {
-        return pers;
+    public Set<Pet> getpets() {
+        return pets;
     }
 
-    public void setPers(Set<Pet> pers) {
-        this.pers = pers;
+    public void setpets(Set<Pet> pets) {
+        this.pets = pets;
     }
 }
