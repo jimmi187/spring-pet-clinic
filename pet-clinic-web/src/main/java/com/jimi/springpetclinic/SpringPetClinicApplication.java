@@ -12,8 +12,7 @@ public class SpringPetClinicApplication {
 	public static void main(String[] args) {
 
 		ApplicationContext context = SpringApplication.run(SpringPetClinicApplication.class, args);
-		Person p = new Person("dzimi", "dzimic");
-		System.out.println(p.getFirstName());
+
 
 	}
 
