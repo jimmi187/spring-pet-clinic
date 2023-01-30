@@ -2,6 +2,6 @@ package com.jimi.springpetclinic.services;
 
 import com.jimi.springpetclinic.model.Speciality;
 
-public interface SpecialityService extends CrudService<Speciality, Long>{
+public interface SpecialtyService extends CrudService<Speciality, Long>{
 
 }

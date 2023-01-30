@@ -2,7 +2,7 @@ package com.jimi.springpetclinic.services.map;
 
 import com.jimi.springpetclinic.model.Speciality;
 import com.jimi.springpetclinic.model.Vet;
-import com.jimi.springpetclinic.services.SpecialityService;
+import com.jimi.springpetclinic.services.SpecialtyService;
 import com.jimi.springpetclinic.services.VetService;
 import org.springframework.stereotype.Service;
 
@@ -11,10 +11,10 @@ import java.util.Set;
 @Service
 public class VetServiceMap extends AbstractMapService<Vet, Long> implements VetService {
 
-    private final SpecialityService specialityService;
+    private final SpecialtyService specialtyService;
 
-    public VetServiceMap(SpecialityService specialityService) {
-        this.specialityService = specialityService;
+    public VetServiceMap(SpecialtyService specialtyService) {
+        this.specialtyService = specialtyService;
     }
 
     @Override
@@ -31,7 +31,7 @@ public class VetServiceMap extends AbstractMapService<Vet, Long> implements VetS
     public Vet save(Vet object) {
         if (object.getSpecialities().size() > 0){
             object.getSpecialities().forEach( speciality -> {
-                Speciality savedSpec = specialityService.save(speciality);
+                Speciality savedSpec = specialtyService.save(speciality);
                 speciality.setId(savedSpec.getId());
             });
         }

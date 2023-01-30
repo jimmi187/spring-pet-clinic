@@ -43,11 +43,11 @@ public class Owner extends Person {
         this.telephone = telephone;
     }
 
-    public Set<Pet> getpets() {
+    public Set<Pet> getPets() {
         return pets;
     }
 
-    public void setpets(Set<Pet> pets) {
+    public void setPets(Set<Pet> pets) {
         this.pets = pets;
     }
 }
